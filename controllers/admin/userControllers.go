@@ -58,6 +58,7 @@ func (con UserController) List(ctx *gin.Context) {
 	user := []models.User{}
 	tools.DB.Find(&user)
 	ctx.JSON(http.StatusOK, gin.H{
+		"code": 0,
 		"data": user,
 	})
 }
